@@ -11,11 +11,20 @@ public class PlayerCtrl : MonoBehaviour
 
     [SerializeField]
     private GameManager gmr;
+
+    // 초기 생명 값
+    private readonly float initHp = 10000.0f;
+    // 현재 생명 값
+    public float currHp;
+
+    
     void Start()
     {
         gmr = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         // Transform 컴포넌트를 추출해 변수에 대입
         tr = GetComponent<Transform>();
+
+        currHp = initHp;
     }
     // Update is called once per frame
     void Update()
@@ -41,4 +50,9 @@ public class PlayerCtrl : MonoBehaviour
             gmr.LoadScene("BossScene");
         }
     }
+    void PlayerDie()
+    {
+        Debug.Log("Player Die !");
+    }
+   
 }

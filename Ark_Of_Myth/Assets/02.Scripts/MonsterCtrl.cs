@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class MonsterCtrl : MonoBehaviour
 {
+    private readonly int hashDie = Animator.StringToHash("Die");
+    private int hp = 100;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+ 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnCollisionEnter(Collision coll)
     {
 
@@ -26,4 +20,5 @@ public class MonsterCtrl : MonoBehaviour
         }
 
     }
+    
 }
