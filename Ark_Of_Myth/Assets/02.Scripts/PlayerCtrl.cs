@@ -8,9 +8,12 @@ public class PlayerCtrl : MonoBehaviour
     private Transform tr;
     // 이동 속력 변수 (public으로 선언되어 인스펙터 뷰에 노출됨)
     public float moveSpeed = 10.0f;
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private GameManager gmr;
     void Start()
     {
+        gmr = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         // Transform 컴포넌트를 추출해 변수에 대입
         tr = GetComponent<Transform>();
     }
@@ -32,5 +35,10 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         // Translate(이동 방향 * 속력 * Time.deltaTime)
         tr.Translate(moveDir * Time.deltaTime * moveSpeed);
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            gmr.LoadScene("BossScene");
+        }
     }
 }
