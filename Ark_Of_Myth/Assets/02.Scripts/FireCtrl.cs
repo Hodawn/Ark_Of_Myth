@@ -15,6 +15,6 @@ public class FireCtrl : MonoBehaviour
         // Rigidbody 컴포넌트를 추출
         rb = GetComponent<Rigidbody2D>();
         // 총알의 전진 방향으로 힘(Force)을 가한다.
-        rb.AddForce(new Vector3(1.0f, 0.0f, 0.0f) * force);
+        rb.AddForce(new Vector3(0.0f, 1.0f, 0.0f) * force);
     }
 }

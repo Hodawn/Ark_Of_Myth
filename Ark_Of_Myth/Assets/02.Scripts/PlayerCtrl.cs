@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     // 컴포넌트를 처리할 변수
-    private Transform tr;
+    public Transform tr;
     // 이동 속력 변수 (public으로 선언되어 인스펙터 뷰에 노출됨)
     public float moveSpeed = 10.0f;
 
     [SerializeField]
     private GameManager gmr;
+
+     
 
     // 초기 생명 값
     private readonly float initHp = 10000.0f;
