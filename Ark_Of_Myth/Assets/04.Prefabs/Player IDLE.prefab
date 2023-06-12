@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6176294125067095770}
   - component: {fileID: 6176294125067095589}
-  - component: {fileID: 6176294125067095591}
   - component: {fileID: 6176294125067095771}
   m_Layer: 0
   m_Name: Main Camera
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6176294125067095591
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6176294125067095590}
-  m_Enabled: 1
 --- !u!114 &6176294125067095771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,12 +191,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6176294126540823972
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,6 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00da395af6206d46adf9941f007a4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tr: {fileID: 6176294126540823131}
   moveSpeed: 10
   gmr: {fileID: 0}
+  spriteRenderer: {fileID: 6176294126540823130}
+  playerSprite:
+  - {fileID: 21300000, guid: 23730a0e361ee0145a30ecb04fd2a2db, type: 3}
+  - {fileID: 21300000, guid: 9df713ae233296042ada292eb1027222, type: 3}
   currHp: 0
+  playerState: 0
