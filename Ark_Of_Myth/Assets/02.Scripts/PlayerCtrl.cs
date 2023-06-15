@@ -24,7 +24,7 @@ public class PlayerCtrl : MonoBehaviour
     public Sprite[] playerSprite = new Sprite[2];
 
     // 초기 생명 값
-    private readonly float initHp = 10000.0f;
+    private readonly float initHp = 1000.0f;
     // 현재 생명 값
     public float currHp;
 
@@ -46,15 +46,7 @@ public class PlayerCtrl : MonoBehaviour
         float h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
         float v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
       
-        // Transform 컴포넌트의 position 속성값을 변경
-        //transform.position += new Vector3(0, 0, 1);
-        // 정규화 벡터를 사용한 코드
-        //transform.position += Vector3.forward * 1;
-        //tr.Translate(Vector3.forward * 10);
-        // Translate(이동 방향 * 속력 * Time.deltaTime)
-
-        //tr.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
-        // 전후좌우 이동 방향 벡터 계산
+        
 
         Vector3 moveDir = (new Vector3(0.0f, 1.0f, 0.0f) * v) + (new Vector3(1.0f, 0.0f, 0.0f) * h);
         // Translate(이동 방향 * 속력 * Time.deltaTime)

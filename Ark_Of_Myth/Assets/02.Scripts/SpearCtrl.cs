@@ -12,6 +12,8 @@ public class SpearCtrl : MonoBehaviour
     public float resetTime = 2.0f;
     public float TimeSet = 0.0f;
 
+    public float damage = 30.0f;
+
     void Start()
     {
       
