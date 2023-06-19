@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MonsterCtrl : MonoBehaviour
 {
     private readonly int hashDie = Animator.StringToHash("Die");
-    private int hp = 100;
+    public int hp = 100;
 
     public float GenTime;
     public SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
+
+    public Slider HealthBar;
 
     private void Start()
     {
@@ -27,14 +30,18 @@ public class MonsterCtrl : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter2D(Collision2D coll)
     {
 
-        if (coll.collider.CompareTag("Sword"))
+        if (coll.collider.CompareTag("SWORD"))
         {
-            // 충돌한 총알을 삭제
-            Destroy(coll.gameObject);
-            
+            hp -= 10;
+            HealthBar.value = (float)hp/100.0f;
+
+            if (hp <= 0)
+            {
+                SceneManager.LoadScene("EndingScene");
+            }
         }
 
     }
